@@ -15,10 +15,21 @@ class JurorsController extends Controller
             if ($juror->DOB === date_format($date, 'd-M-y')) {
                 return view('show', ['juror' => $juror]);
             } else {
-                dd('Id # found but the dob doesn\'t match');
+                return view ('home',
+                [
+                    'id' => request('id'),
+                    'dob' => request('dob'),
+                    'err' => 'That ID is in our database, but the birthdate 
+                    and ID do not match.'
+                ]);
             }
         } else {
-            dd('Id not found');
+            return view('home',
+                [
+                    'id' => request('id'),
+                    'dob' => request('dob'),
+                    'err' => 'That ID is not in our database.'
+                ]);
         }
     }
 }

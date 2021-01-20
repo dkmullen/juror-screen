@@ -16,6 +16,7 @@ use App\Http\Controllers\JurorsController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->name('home');
+
 Route::post('/jurors', [JurorsController::class, 'store'])->name('juror.show');

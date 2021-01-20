@@ -1,0 +1,13 @@
+.center {
+    text-align: center;
+}
+.gray {
+    background-color: lightgray;
+    margin-bottom: 1rem;
+}
+body {
+    margin-top: 1rem;
+}
+.session-message {
+    color:red;
+}
